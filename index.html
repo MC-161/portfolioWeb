@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCSWE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              mono: {
+                bg: 'var(--mono-bg)',
+                fg: 'var(--mono-fg)',
+                surface: 'var(--mono-surface)',
+                border: 'var(--mono-border)',
+                muted: 'var(--mono-muted)',
+                light: 'var(--mono-light)',
+                accent: '#10b981', // Emerald Green Accent
+              }
+            },
+            fontFamily: {
+              sans: ['"Inter"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --mono-bg: #FFFFFF;
+        --mono-fg: #000000;
+        --mono-surface: #F8F8F8;
+        --mono-border: #000000;
+        --mono-muted: #777777;
+        --mono-light: #EEEEEE;
+        --grid-color: #f0f0f0;
+      }
+
+      html.dark {
+        --mono-bg: #0A0A0A;
+        --mono-fg: #FFFFFF;
+        --mono-surface: #171717;
+        --mono-border: #262626;
+        --mono-muted: #A3A3A3;
+        --mono-light: #262626;
+        --grid-color: #1a1a1a;
+      }
+
+      * { 
+        border-radius: 0 !important; 
+      }
+
+      body {
+        background-color: var(--mono-bg);
+        color: var(--mono-fg);
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .technical-grid {
+        background-image: 
+          linear-gradient(var(--grid-color) 1px, transparent 1px), 
+          linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      .mono-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      ::selection {
+        background: #10b981;
+        color: #FFFFFF;
+      }
+
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: var(--mono-bg); }
+      ::-webkit-scrollbar-thumb { background: #10b981; }
+
+      /* Print Styles */
+      @media print {
+        .print\:hidden { display: none !important; }
+        .technical-grid { background-image: none !important; background-color: #fff !important; }
+        body { color: #000 !important; background-color: #fff !important; }
+        nav, footer, .fixed, .shadow-[20px_20px_0px_#10b98130], button { display: none !important; }
+        
+        section { 
+          page-break-inside: avoid; 
+          border-top: 1px solid #eee !important;
+          padding: 2rem 0 !important;
+          margin: 0 !important;
+        }
+
+        h1, h2, h3 { color: #000 !important; }
+        .text-mono-muted { color: #666 !important; }
+        .text-mono-accent { color: #000 !important; font-weight: bold; }
+        
+        #root { 
+          max-width: 100% !important; 
+          margin: 0 !important; 
+          padding: 0 !important;
+        }
+
+        .max-w-7xl { max-width: 100% !important; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+<link rel="icon" type="image/x-icon" href="mcFavicon.png">
+</head>
+  <body class="technical-grid">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
