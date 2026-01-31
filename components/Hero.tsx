@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           <span className="opacity-20 hidden sm:inline">|</span>
           <div className="flex items-center gap-2">
             <Activity size={10} className="text-mono-accent" />
-            <span className="animate-[pulse_3s_infinite]">Current_Focus: Distributed_Systems_Optimization</span>
+            <span className="animate-[pulse_3s_infinite]">Current_Focus: Software Engineering Positions</span>
           </div>
         </div>
 

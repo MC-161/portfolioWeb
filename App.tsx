@@ -10,7 +10,7 @@ import { Sun, Moon, FilterX, Search, ArrowDownCircle } from 'lucide-react';
 const App: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') as 'light' | 'dark' || 'light';
+      return localStorage.getItem('theme') as 'dark' | 'light' || 'dark';
     }
     return 'light';
   });
