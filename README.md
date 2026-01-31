@@ -11,7 +11,6 @@ A modern, interactive portfolio website built with React and TypeScript, showcas
   - Experience timeline
   - Project showcase cards
   - Contact portal with terminal-style chat
-- **AI-Powered Chat** - Integrated Google GenAI for interactive conversations
 - **Responsive Design** - Optimized for desktop and mobile devices
 - **Modern Tech Stack** - React 19, TypeScript, Vite, and TailwindCSS
 
@@ -89,7 +88,6 @@ Theme selection is automatically saved to localStorage and persists across sessi
 | ExperienceTimeline | Chronological work experience display |
 | ProjectCard | Individual project showcase |
 | ContactPortal | Contact information and chat interface |
-| TerminalChat | Terminal-style AI chat interface |
 
 
 **Built with React, TypeScript**
