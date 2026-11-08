@@ -43,13 +43,16 @@ export const EXPERIENCE: Role[] = [
   },
   {
     company: 'DotPlot / Tech Academia',
-    title: 'Software engineering pathway',
+    title: 'Software engineering pathway, Software & Data Engineering Accelerator',
     period: 'Jul – Aug 2024',
     place: 'Remote',
-    stack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    stack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Mocha', 'Spline'],
     points: [
-      'Won 1st place of 7 teams leading a team of 4 to build Sonomon, a patient-management and breast-scan visualisation app, deployed 24 hours early.',
-      'Cut page load from 6.9s to 1.9s by lazy-loading scans and 3D models.',
+      'Won 1st place out of 7 teams, leading a team of 4 to build Sonomon, a patient-management and breast-ultrasound visualisation app for clinicians, shipped 24 hours before the deadline.',
+      'Built the Node.js, Express and MongoDB API: patient and scan records, scan uploads with Multer, bcrypt-hashed logins and JWT sessions that expire hourly, covered by Mocha and Chai API tests.',
+      'Built the React and TypeScript front end, including an interactive 3D torso for locating and examining lesions across a patient’s scans.',
+      'Cut first load from 6.9 s to 1.9 s by compressing assets and deferring scans and the 3D model until they were needed.',
+      'Designed high-fidelity mock-ups, split the build into 10+ tasks by teammates’ strengths, and cleared 3 blockers to reach a working MVP in 48 hours.',
     ],
   },
 ];
