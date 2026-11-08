@@ -1,95 +1,41 @@
-# Mahfuz Chowdhury — Systems Engineer Portfolio
+# Mahfuz Chowdhury: portfolio
 
-A modern, interactive portfolio website built with React and TypeScript, showcasing professional experience, skills, and projects. Features a dark/light theme toggle, AI-powered chat functionality, and a responsive design.
+Personal site for recruiters and engineers. It shows experience, projects with real product videos, architecture diagrams and live models, an open-source contribution, engineering write-ups, and a one-click CV download.
 
-## Features
-
-- **Dark/Light Theme Toggle** - Seamless theme switching with persistent preferences
-- **Interactive Components**
-  - Hero section with dynamic introduction
-  - Skills matrix visualization
-  - Experience timeline
-  - Project showcase cards
-  - Contact portal with terminal-style chat
-- **Responsive Design** - Optimized for desktop and mobile devices
-- **Modern Tech Stack** - React 19, TypeScript, Vite, and TailwindCSS
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Hero.tsx              # Landing section
-│   ├── SkillsMatrix.tsx       # Skills visualization
-│   ├── ExperienceTimeline.tsx # Work experience
-│   ├── ProjectCard.tsx        # Project showcase
-│   ├── ContactPortal.tsx      # Contact section
-│   └── TerminalChat.tsx       # AI chat interface
-├── services/
-│   └── resumeService.ts       # Resume and data service
-├── App.tsx                    # Main application component
-├── constants.ts               # Configuration and constants
-├── types.ts                   # TypeScript type definitions
-└── vite.config.ts            # Vite configuration
-```
-
-## Quick Start
-
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-
-### Installation
+## Run it
 
 ```bash
 npm install
+npm run dev      # http://localhost:5173
+npm run build    # type-checks, then outputs to dist/
 ```
 
-### Development
+## Where things live
 
-```bash
-npm run dev
-```
+| What | Where |
+|---|---|
+| All page copy (roles, projects, skills, links) | `src/data.ts` |
+| Write-ups, opened at `#notes-<id>` | `src/notes.ts` |
+| Architecture diagrams (640 × 340 coordinates) | `src/diagrams.ts` |
+| Hero terminal output | `src/components/Terminal.tsx` |
+| Hero glass readouts | `src/components/Hero.tsx` |
+| Live project models | `src/components/demos/` |
+| Product videos and posters | `public/media/` |
+| CV download | `public/Mahfuz_Chowdhury_CV.pdf` |
+| Link preview image (1200 × 630) | `public/og.png` |
+| Styles | `src/styles.css` |
 
-The application will start at `http://localhost:5173`
+Videos and demos only play while on screen, and show a still for visitors who prefer reduced motion.
 
-### Build
+## Deploy
 
-```bash
-npm run build
-```
+Static files only, no secrets. On Vercel: framework preset Vite, build `npm run build`, output `dist`.
 
-### Preview
+After the first deploy:
 
-```bash
-npm run preview
-```
+1. In `index.html`, change `og:image` and `twitter:image` from `/og.png` to the full address, e.g. `https://your-domain/og.png`. LinkedIn and Slack need an absolute URL to show the preview.
+2. In the Vercel project, open **Analytics** and turn it on. CV downloads are tracked as the custom event `CV download`, with where the click came from (`hero`, `nav` or `contact`).
 
-## Technologies
+## Stack
 
-- **React** 19.2.3 - UI library
-- **TypeScript** 5.8.2 - Type safety
-- **Vite** 6.2.0 - Build tool
-- **TailwindCSS** - Styling
-- **Lucide React** 0.562.0 - Icons
-- **Google GenAI** 1.37.0 - AI chat integration
-
-## Configuration
-
-### Theme Preferences
-Theme selection is automatically saved to localStorage and persists across sessions.
-
-## Components
-
-| Component | Purpose |
-|-----------|---------|
-| Hero | Main landing section with introduction |
-| SkillsMatrix | Display technical skills with filtering |
-| ExperienceTimeline | Chronological work experience display |
-| ProjectCard | Individual project showcase |
-| ContactPortal | Contact information and chat interface |
-
-
-**Built with React, TypeScript**
-
-
+React 19, TypeScript and Vite, with plain CSS. Fonts are Geist and Geist Mono from Google Fonts. Analytics is Vercel Analytics.
